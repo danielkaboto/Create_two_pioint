@@ -51,11 +51,12 @@ public class App {
         JLabel l3 = new JLabel("The result will appear Here!! ");
         l3.setBounds(20,125,200,20);
         f1.add(l3);
-
+        
         b1.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) 
             {
+                try{
                JOptionPane.showMessageDialog(null, "You Pressed + button");
                 double a = Double.parseDouble( t1.getText());
                 double b = Double.parseDouble(t2.getText());
@@ -63,6 +64,11 @@ public class App {
                double r = a+b;
 
                l3.setText(a+" + " + b +" = " +r);
+            }
+               catch(Exception ex)
+               {
+                JOptionPane.showMessageDialog(null,"Enter a valid number ","error",JOptionPane.ERROR_MESSAGE);
+               }
             }
         });
 
